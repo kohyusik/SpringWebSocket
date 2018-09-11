@@ -1,0 +1,15 @@
+server:
+    port: 9999
+spring:
+  devtools:
+    livereload:
+      enabled: true
+#  freemarker:
+#    cache: false
+
+#System.setProperty("spring:devtools:restart:enabled", "false");
+#System.setProperty("spring:devtools:livereload:enabled", "true");
+
+
+#redis:
+#  server:
