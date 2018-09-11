@@ -1,9 +1,15 @@
 server:
-    port: 9999
+  port: 9999
+
 spring:
   devtools:
     livereload:
       enabled: true
+
+  data:
+    rest:
+      basePath: /api
+
 #  freemarker:
 #    cache: false
 
