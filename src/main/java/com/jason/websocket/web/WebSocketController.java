@@ -15,10 +15,11 @@ public class WebSocketController {
     }
     
     
-    @MessageMapping("/chat/join")
-    public void join(Object message) {
+    @MessageMapping("/control/test")
+    public void test(String message) {
     
-        System.out.println();
+        System.out.println(message);
+        template.convertAndSend("/topic" + "/sub/test", message);
 //        template.convertAndSend("/subscribe/chat" + message.getChatRoomId(), message);
     }
 }

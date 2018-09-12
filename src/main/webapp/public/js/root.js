@@ -19,6 +19,10 @@ requirejs.config({
     //never includes a ".js" extension since
     //the paths config could be for a directory.
     paths: {
-        websocket: './websocket'
+        'websocket': 'websocket',
+        'jquery': '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min',
+        'sockjs': '//cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs',
+        'stomp': '//cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp'
+
     }
 });
