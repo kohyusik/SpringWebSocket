@@ -30,8 +30,8 @@ require(['/public/js/root.js'], function (root) {
 
             var query = {};
             // query.message = message;
-            // stompClient.send("/app" + '/control/test', {}, message);
-            stompClient.send("/topic" + '/sub/test', {}, message);
+            stompClient.send("/app" + '/control/test', {}, message);
+            // stompClient.send("/topic" + '/sub/test', {}, message);
             messageInput.val('');
             messageInput.focus();
         });
