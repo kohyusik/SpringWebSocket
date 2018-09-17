@@ -149,8 +149,7 @@ public class HttpWebsocketServer {
                             for (int i = 0; i < payloadArray.length; i++) {
                                 int mask = maskKey[i % 4];
                                 int encoded = payloadArray[i];
-                                dout.write(encoded ^ mask);
-
+                                dout.write(encoded ^ mask); // XOR MASK
                             }
                             dout.flush();
 

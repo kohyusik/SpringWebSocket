@@ -153,5 +153,5 @@ class StudentForm extends React.Component {
         );
     }
 }
-debugger;
+// debugger;
 ReactDOM.render(<App />, document.getElementById('root') );
