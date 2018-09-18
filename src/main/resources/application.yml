@@ -38,5 +38,6 @@ spring:
     database: h2
     hibernate:
       ddl-auto: update
+#      use-new-id-generator-mappings: false
     show-sql: true
 

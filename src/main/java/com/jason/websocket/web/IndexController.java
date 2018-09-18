@@ -1,5 +1,7 @@
 package com.jason.websocket.web;
 
+import com.jason.websocket.domain.ClassRoom;
+import com.jason.websocket.domain.ClassRoomRepository;
 import com.jason.websocket.domain.Student;
 import com.jason.websocket.domain.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +13,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class IndexController {
     
     
-    final
-    StudentRepository studentRepository;
+    private final StudentRepository   studentRepository;
+    private final ClassRoomRepository classRoomRepository;
     
     @Autowired
-    public IndexController(StudentRepository studentRepository) {
+    public IndexController(StudentRepository studentRepository, ClassRoomRepository classRoomRepository) {
         
         this.studentRepository = studentRepository;
+        this.classRoomRepository = classRoomRepository;
     }
     
     @RequestMapping(value = "/")
@@ -35,4 +38,16 @@ public class IndexController {
     public Iterable<Student> students() {
         return studentRepository.findAll();
     }
+    
+    @RequestMapping(value = "/api/classroom")
+    @ResponseBody
+    public Iterable<ClassRoom> classRooms() {
+        return classRoomRepository.findAll();
+    }
+//
+//    @RequestMapping(value = "/api/classroom")
+//    @ResponseBody
+//    public Iterable<ClassRoom> classRooms() {
+//        return classRoomRepository.findAll();
+//    }
 }

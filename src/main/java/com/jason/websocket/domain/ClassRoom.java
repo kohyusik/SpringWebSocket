@@ -1,21 +1,20 @@
 package com.jason.websocket.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class ClassRoom {
     
-    private @Id
-    @GeneratedValue
-            Long   id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="CLASSROOM_ID")
+    private Long   id;
     private String name, floor;
     private int capacity;
     
-    private ClassRoom() {
+//    @OneToMany(mappedBy = "classRoom", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    private Set<Student> students;
     
-    }
+    private ClassRoom() {}
     
     public ClassRoom(String name, String floor, int capacity) {
         
@@ -63,4 +62,14 @@ public class ClassRoom {
         
         this.capacity = capacity;
     }
+    
+//    public Set<Student> getStudents() {
+//
+//        return students;
+//    }
+//
+//    public void setStudents(Set<Student> students) {
+//
+//        this.students = students;
+//    }
 }

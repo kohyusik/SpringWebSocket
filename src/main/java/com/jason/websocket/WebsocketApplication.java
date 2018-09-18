@@ -33,13 +33,21 @@ public class WebsocketApplication {
 		@Override
 		public void run(String... strings) throws Exception {
 			
-			this.studentRepository.save(new Student("John", "Johnson", "john@john.com"));
-			this.studentRepository.save(new Student("Mary", "Poppins", "pop@mary.com"));
-			this.studentRepository.save(new Student("Rob", "Robber", "rob@bery.com"));
-			this.studentRepository.save(new Student("Kate", "Robinson", "kate@robinson.com"));
+			ClassRoom classRoom1 = new ClassRoom("class1", "B1", 31);
+			ClassRoom classRoom2 = new ClassRoom("class2", "B2", 31);
+			ClassRoom classRoom3 = new ClassRoom("class3", "3", 32);
+			ClassRoom classRoom4 = new ClassRoom("class4", "4", 32);
 			
-			this.classRoomRepository.save(new ClassRoom("class3", "B1", 31));
-			this.classRoomRepository.save(new ClassRoom("class2", "3", 32));
+			this.classRoomRepository.save(classRoom1);
+			this.classRoomRepository.save(classRoom2);
+			this.classRoomRepository.save(classRoom3);
+			this.classRoomRepository.save(classRoom4);
+			
+			this.studentRepository.save(new Student("John", "Johnson", "john@john.com", classRoom1));
+			this.studentRepository.save(new Student("Mary", "Poppins", "pop@mary.com", classRoom2));
+			this.studentRepository.save(new Student("Rob", "Robber", "rob@bery.com", classRoom3));
+			this.studentRepository.save(new Student("Kate", "Robinson", "kate@robinson.com", classRoom4));
+			
 		}
 	}
 }
