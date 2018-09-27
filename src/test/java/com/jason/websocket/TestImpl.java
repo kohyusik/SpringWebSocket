@@ -11,6 +11,7 @@ public class TestImpl implements TestInterface, TestInterface2{
     @Override
     public void test() {
     
+        System.out.println("TestImple test()");
     }
     
     @Override

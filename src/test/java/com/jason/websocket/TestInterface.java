@@ -9,7 +9,7 @@ package com.jason.websocket;
 public interface TestInterface {
     
     default void test() {
-    
+        
         System.out.println("test");
     }
     
