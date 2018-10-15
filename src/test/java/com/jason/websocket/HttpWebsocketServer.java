@@ -119,11 +119,6 @@ public class HttpWebsocketServer {
                     System.out.println(Integer.toBinaryString(dataSegment));
 
 
-//                    dout.write(0b10000001); // FIN, text
-//                    dout.write(0b00000001); // payload length = 1
-//                    dout.write(0b00110001); // '1'
-//                    dout.flush();
-
                     if (streamIndex == 0) {
 
                     } else if (streamIndex == 1) {

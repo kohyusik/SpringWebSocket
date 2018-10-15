@@ -28,12 +28,13 @@ require(['/public/js/root.js'], function (root) {
         sendBtn.click(function () {
             var message = messageInput.val();
 
-            var query = {};
-            // query.message = message;
-            stompClient.send("/app" + '/control/test', {}, message);
-            // stompClient.send("/topic" + '/sub/test', {}, message);
-            messageInput.val('');
-            messageInput.focus();
+            if (messageInput.val() !== '') {
+                stompClient.send("/app" + '/control/test', {}, message);
+                // stompClient.send("/topic" + '/sub/test', {}, message);
+                messageInput.val('');
+                messageInput.focus();
+
+            }
         });
 
         messageInput.keyup(function(e) {
